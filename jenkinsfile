@@ -1,0 +1,42 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Downloading Healthcare Application from GitHub'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building Healthcare Claims Management Application'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing Healthcare Application'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Healthcare Application to Apache Server'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Healthcare Application Pipeline Successful!'
+        }
+
+        failure {
+            echo 'Healthcare Application Pipeline Failed!'
+        }
+    }
+}
